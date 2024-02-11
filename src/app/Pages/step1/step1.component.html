@@ -1,0 +1,38 @@
+<main>
+  <h1>Step 1 | Choose model and color</h1>
+  <form class="box" [formGroup]="carForm">
+    <div class="input-box">
+      <label for="modelSelect">Model</label>
+      <select
+        id="modelSelect"
+        class="input-item"
+        (change)="getColor(); setValues(); resetValue()"
+        formControlName="model"
+      >
+        <option value="" disabled>Choose...</option>
+        @for(item of models; track $index){
+        <option [ngValue]="item.code">{{ item.description }}</option>
+        }
+      </select>
+    </div>
+
+    @if(this.carForm.value.model !== ''){
+    <div class="input-box">
+      <label for="colorSelect">Color</label>
+      <select
+        id="colorSelect"
+        class="input-item"
+        (change)="setValues()"
+        formControlName="color"
+      >
+        <option value="" disabled>Choose...</option>
+        @for(item of colors; track $index){
+        <option [ngValue]="item.code">
+          {{ item.description }}
+        </option>
+        }
+      </select>
+    </div>
+    }
+  </form>
+</main>

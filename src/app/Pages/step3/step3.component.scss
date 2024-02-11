@@ -1,0 +1,52 @@
+$neutral-50: #fafafa;
+$neutral-100: #f5f5f5;
+$neutral-200: #e5e5e5;
+$neutral-300: #d4d4d4;
+$neutral-400: #a3a3a3;
+$neutral-500: #737373;
+$neutral-600: #525252;
+$neutral-700: #404040;
+$neutral-800: #262626;
+$neutral-900: #171717;
+
+.box {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+}
+
+.title-box {
+  grid-column: span 1 / span 1;
+  display: grid;
+  row-gap: 18px;
+}
+
+.title-item {
+  color: white;
+  font-family: Poppins;
+  display: block;
+}
+
+.title-description {
+  color: $neutral-400;
+  display: block;
+}
+
+.price-item {
+  color: white;
+  font-family: Poppins;
+  display: block;
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: white;
+  margin: 32px 0px;
+}
+
+h2 {
+  color: $neutral-200;
+  margin: 18px 0px;
+}

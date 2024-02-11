@@ -1,0 +1,23 @@
+* {
+  background-color: #262626;
+  font-family: PoppinsLight;
+}
+
+body {
+  padding: 10px 100px;
+}
+
+@font-face {
+  font-family: PoppinsLight;
+  src: url(assets/Fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(assets/Fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: PoppinsBold;
+  src: url(assets/Fonts/Poppins-Bold.ttf);
+}

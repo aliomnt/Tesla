@@ -1,0 +1,33 @@
+<main>
+  <h1>Step 3 | Summary</h1>
+  <h2>Your car</h2>
+
+  <section class="box">
+    <div class="title-box">
+      @for(item of invoice; track $index){ @if(item.state){ @if(item.range &&
+      item.speed){
+      <div>
+        <span class="title-item">{{ item.title }}</span>
+        <span class="title-description"
+          >Range: {{ item.range }} miles - Max speed:
+          {{ item.speed }}
+        </span>
+      </div>
+      } @else{
+
+      <span class="title-item">{{ item.title }}</span>
+      } } }
+    </div>
+
+    <div class="title-box">
+      @for(item of invoice; track $index){ @if(item.state){ @if(item.range &&
+      item.speed){
+      <div>
+        <span class="price-item">{{ item.price() | currency : "$" }}</span>
+      </div>
+      } @else{
+      <span class="title-item">{{ item.price() | currency : "$" }}</span>
+      } } }
+    </div>
+  </section>
+</main>

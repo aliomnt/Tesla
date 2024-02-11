@@ -1,0 +1,48 @@
+<main>
+  <h1>Step 2 | Choose config and option</h1>
+  <form class="box" [formGroup]="carForm">
+    @if(options){
+    <div class="input-box">
+      <label for="configSelect" class="input-label">Config</label>
+      <select
+        id="configSelect"
+        class="input-item"
+        (change)="setConfig()"
+        formControlName="config"
+      >
+        <option value="0" disabled>Choose...</option>
+        @for(item of options.configs; track $index){
+        <option [ngValue]="item.id">{{ item.description }}</option>
+        }
+      </select>
+    </div>
+    @if(carForm.value.config !== 0){
+    <span
+      >Range: {{ config.range }} miles - Max speed: {{ config.speed }} - Cost:
+      {{ config.price | currency : "$" }}</span
+    >
+    } @if(options.towHitch){
+    <div class="check-box">
+      <label for="includeTow" class="check-label">Tow hitch | </label>
+      <input
+        type="checkbox"
+        id="includeTow"
+        class="check-item"
+        formControlName="towHitch"
+        (change)="setTowHitch($event)"
+      />
+    </div>
+    } @if(options.yoke){
+    <div class="check-box">
+      <label for="includeYoke" class="check-label">Yok steering wheel | </label>
+      <input
+        type="checkbox"
+        id="includeYoke"
+        class="check-item"
+        formControlName="yoke"
+        (change)="setYoke($event)"
+      />
+    </div>
+    } }
+  </form>
+</main>

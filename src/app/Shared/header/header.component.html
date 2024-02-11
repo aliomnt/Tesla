@@ -1,0 +1,13 @@
+<header class="header">
+  @for(item of headerItems; track i; let i = $index){
+  <a
+    [id]="'step' + (i + 1)"
+    class="header-item"
+    [routerLink]="item.route"
+    routerLinkActive="active"
+    [ngClass]="item.isEnable ? 'cursor-enable' : 'cursor-disable'"
+    (mouseenter)="checkCursor()"
+    >{{ item.title | uppercase }}
+  </a>
+  }
+</header>
