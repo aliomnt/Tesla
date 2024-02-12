@@ -6,6 +6,7 @@ import { IOptions } from '../Interfaces/IOptions';
   providedIn: 'root',
 })
 export class ValuesService {
+  name: string = '';
   model: string = '';
   color: string = '';
   colorDescription: string = '';

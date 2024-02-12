@@ -12,6 +12,7 @@ import { IInvoice } from '../../Interfaces/IInvoice';
 })
 export class Step3Component implements OnInit {
   invoice!: IInvoice[];
+  carName!: string;
 
   constructor(private valuesService: ValuesService) {}
 
@@ -20,6 +21,7 @@ export class Step3Component implements OnInit {
   }
 
   public setValue() {
+    this.carName = this.valuesService.name;
     this.invoice = [
       {
         title: this.valuesService.config?.description,

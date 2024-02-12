@@ -66,8 +66,12 @@ export class Step1Component implements OnInit {
       const selectedColor: IColors = this.colors.filter(
         (color) => color.code == colorValue
       )[0];
+      const nameValue: string = this.models.filter(
+        (car) => car.code == modelValue
+      )[0].description;
 
       this.imageService.setImage(`${modelValue}/${colorValue}.jpg`);
+      this.valuesService.name = nameValue;
       this.valuesService.model = modelValue;
       this.valuesService.color = colorValue;
       this.valuesService.colorDescription = selectedColor.description;
